@@ -1,0 +1,52 @@
+
+.c-side {
+  height: 93.3%;
+  width: 100%;
+
+
+}
+
+.side {
+  background-color: #3f51b5;
+  color: white;
+  width: 7%;
+
+
+}
+
+.side-button {
+  width: 100px;
+  height: 50px;
+  font-size: x-large;
+  background-color: #3f51b5;
+  border-color: #3f51b5;
+  color: white;
+}
+
+.mg {
+  width: 93%;
+  justify-content: right;
+  margin-left: 101px;
+
+}
+
+.mat-sidenav-container {
+  margin-top: 70px;
+}
+
+.start{
+  text-align: start;
+
+}
+.row{
+  width: 150px;
+}
+
+.custom-sidenav ::ng-deep .mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+.custom-sidenav ::ng-deep .mat-drawer-content {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}

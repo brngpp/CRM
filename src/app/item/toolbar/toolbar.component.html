@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    
+  
+    <mat-toolbar-row>
+      <span>Toolbar</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="dx" >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+       
+          <mat-icon>face</mat-icon>
+          <span>Ruolo</span>
+      
+        <button mat-menu-item >
+          <mat-icon></mat-icon>
+          <span>logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  
+    
+  </mat-toolbar>

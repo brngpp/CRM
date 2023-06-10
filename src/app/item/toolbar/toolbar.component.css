@@ -1,0 +1,15 @@
+.dx{
+  
+  margin-left: auto;
+   
+}
+.mat-toolbar {
+  position: sticky;
+ 
+  top: 0; 
+  z-index: 1000; 
+}
+
+.sx{
+  text-align: start;
+}
