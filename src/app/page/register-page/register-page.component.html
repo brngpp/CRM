@@ -1,28 +1,39 @@
 <mat-card class="example-card">
     <mat-card-header>
       
-      <mat-card-title>login</mat-card-title>
+      <mat-card-title>Register</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <form class="row">
+     
+        <form [formGroup]="formGroup"  class="row">
             <mat-form-field class="example-full-width col-12">
-              <mat-label>username</mat-label>
-              <input matInput placeholder="username" >
+              <mat-label>name</mat-label>
+              <input matInput placeholder="username" formControlName="nome">
+            </mat-form-field>
+            <mat-form-field class="example-full-width col-12">
+              <mat-label>surname</mat-label>
+              <input matInput placeholder="username" formControlName="cognome">
             </mat-form-field>
 
             <mat-form-field class="example-full-width col-12">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="email" >
+                <input matInput placeholder="email" formControlName="email">
               </mat-form-field>
 
             <mat-form-field class="example-full-width col-12">
                 <mat-label>password</mat-label>
-                <input type="password" matInput placeholder="password" >
+                <input type="password" matInput placeholder="password" formControlName="password" >
+              </mat-form-field>
+              <mat-form-field class="example-full-width col-12">
+                <mat-label>Confirm password</mat-label>
+                <input type="password" matInput placeholder="password" formControlName="passwordConfirm" >
               </mat-form-field>
 
               <mat-form-field class="example-full-width col-12">
-                <mat-label>role</mat-label>
-                <input  matInput placeholder="role" >
+                <mat-label>Role</mat-label>
+                <mat-select  placeholder="Select a role" formControlName="role">
+                  <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+                </mat-select>
               </mat-form-field>
             
           
@@ -31,7 +42,7 @@
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>register</button>
+      <button mat-button (click)="register()">register</button>
       
     </mat-card-actions>
     <mat-card-footer>

@@ -2,7 +2,7 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav mode="side" opened="true" *ngIf="true" class="custom-sidenav">
     
-<div class="row">
+<div class="row" *ngIf="login">
     <button class="col-12 start"  mat-button *ngFor="let item of list"
         [routerLink]="item.path"
          

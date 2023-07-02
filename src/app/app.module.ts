@@ -18,8 +18,16 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegisterPageComponent } from './page/register-page/register-page.component';
-
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthService } from './service/auth-service.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { TicketModalComponent } from './modali/ticket-modal/ticket-modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AuthInterceptor } from './service/auth-interceptor.service';
+
 
 
 
@@ -33,9 +41,11 @@ import {MatMenuModule} from '@angular/material/menu';
     ToolbarComponent,
     TabellaComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    TicketModalComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -49,10 +59,25 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDividerModule,
     MatInputModule,
     MatFormFieldModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDialogModule,
+   
+
+  
+
     
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

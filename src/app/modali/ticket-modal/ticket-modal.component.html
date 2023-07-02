@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup"  class="row">
+    <mat-form-field class="example-full-width col-12">
+      <mat-label>description:</mat-label>
+      <input matInput placeholder="description:" formControlName="description">
+    </mat-form-field>
+    <mat-form-field class="example-full-width col-12">
+      <mat-label>budget</mat-label>
+      <input  type='number' matInput placeholder="budget" formControlName="budget">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width col-12">
+        <mat-label>Quantity</mat-label>
+        <input  type='number' matInput placeholder="quantità" formControlName="quantity">
+      </mat-form-field>
+
+      <div class="row">
+        <button class="col-6" (click)="save()">save</button>
+        <button class="col-6" [mat-dialog-close]="true">cancel</button>
+      </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TicketModalComponent } from 'src/app/modali/ticket-modal/ticket-modal.component';
 
 
 export interface PeriodicElement {
@@ -29,9 +31,23 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TabellaComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public newTicketModal(dati?:any){
+let param={
+        "dati":dati ? dati : []
 }
+this.dialog.open(TicketModalComponent,{
+   data:{
+    dati:param
+   } , });
+}
+
+  }
+
+

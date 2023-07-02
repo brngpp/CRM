@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="!showReg">
     <mat-card-header>
       
       <mat-card-title>login</mat-card-title>
@@ -7,12 +7,12 @@
         <form class="row">
             <mat-form-field class="example-full-width col-12">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="email" >
+              <input matInput placeholder="email" #email value="Giu@">
             </mat-form-field>
 
             <mat-form-field class="example-full-width col-12">
                 <mat-label>password</mat-label>
-                <input type="password" matInput placeholder="password" >
+                <input type="password" matInput placeholder="password"  #password value="fra753357" >
               </mat-form-field>
             
           
@@ -21,10 +21,12 @@
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>login</button>
-      <button mat-button>register</button>
+      <button mat-button (click)="onLogin(email.value,password.value)">login</button>
+      <button mat-button (click)="showRegister()" >register</button>
     </mat-card-actions>
     <mat-card-footer>
     
     </mat-card-footer>
   </mat-card>
+
+  <app-register-page *ngIf="showReg"></app-register-page>
