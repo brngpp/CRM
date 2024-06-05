@@ -1,3 +1,7 @@
+un CRM di base , utilizza angular e angular material per creare tabelle dinamiche!
+
+
+
 # CrmBase2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
